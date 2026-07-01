@@ -35,9 +35,11 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
-  bool get isDarkMode => _themeMode == ThemeMode.dark || 
-      (_themeMode == ThemeMode.system && 
-       WidgetsBinding.instance.platformDispatcher.platformBrightness == Brightness.dark);
+  bool get isDarkMode =>
+      _themeMode == ThemeMode.dark ||
+      (_themeMode == ThemeMode.system &&
+          WidgetsBinding.instance.platformDispatcher.platformBrightness ==
+              Brightness.dark);
 
   @override
   Widget build(BuildContext context) {

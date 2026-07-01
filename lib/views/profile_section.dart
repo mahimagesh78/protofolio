@@ -53,7 +53,9 @@ class _AnimatedProfileState extends State<AnimatedProfile>
             },
             child: CustomPaint(
               size: Size(ringSize, ringSize),
-              painter: _DashedRingPainter(color: Theme.of(context).colorScheme.primary),
+              painter: _DashedRingPainter(
+                color: Theme.of(context).colorScheme.primary,
+              ),
             ),
           ),
 
@@ -77,10 +79,15 @@ class _AnimatedProfileState extends State<AnimatedProfile>
                 image: AssetImage(widget.imagePath),
                 fit: BoxFit.cover,
               ),
-              border: Border.all(color: Theme.of(context).colorScheme.outline, width: 1),
+              border: Border.all(
+                color: Theme.of(context).colorScheme.outline,
+                width: 1,
+              ),
               boxShadow: [
                 BoxShadow(
-                  color: Theme.of(context).colorScheme.onSurface.withOpacity(0.08),
+                  color: Theme.of(
+                    context,
+                  ).colorScheme.onSurface.withOpacity(0.08),
                   blurRadius: 24,
                   offset: const Offset(0, 12),
                 ),

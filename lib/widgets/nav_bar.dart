@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../constants.dart';
 import '../main.dart';
+
 class NavBar extends StatelessWidget {
   final VoidCallback? onHomeTap;
   final VoidCallback? onAboutTap;
@@ -22,7 +23,10 @@ class NavBar extends StatelessWidget {
       decoration: BoxDecoration(
         color: Theme.of(context).scaffoldBackgroundColor.withOpacity(0.92),
         border: Border(
-          bottom: BorderSide(color: Theme.of(context).colorScheme.outline, width: 1),
+          bottom: BorderSide(
+            color: Theme.of(context).colorScheme.outline,
+            width: 1,
+          ),
         ),
       ),
       child: Center(
@@ -86,10 +90,7 @@ class NavBar extends StatelessWidget {
                   children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        logo,
-                        const _ThemeToggleButton(),
-                      ],
+                      children: [logo, const _ThemeToggleButton()],
                     ),
                     const SizedBox(height: 14),
                     Wrap(
@@ -181,13 +182,13 @@ class _ThemeToggleButton extends StatelessWidget {
   Widget build(BuildContext context) {
     // Need to use a builder or similar if MyApp is not in scope,
     // but since we provided MyApp.of(context), we can use it.
-    // However, to avoid tight coupling with main.dart, we can just use 
+    // However, to avoid tight coupling with main.dart, we can just use
     // a common pattern or require the user to import main.dart
-    
+
     return IconButton(
       icon: Icon(
-        Theme.of(context).brightness == Brightness.dark 
-            ? Icons.light_mode 
+        Theme.of(context).brightness == Brightness.dark
+            ? Icons.light_mode
             : Icons.dark_mode,
         color: Theme.of(context).colorScheme.onSurface,
       ),
